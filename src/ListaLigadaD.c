@@ -1,5 +1,3 @@
-// #include "ListaLigadaD.h"
-
 #include "../include/ListaLigadaD.h"
 
 #include <stdio.h>

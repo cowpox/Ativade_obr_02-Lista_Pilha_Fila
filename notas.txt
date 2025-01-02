@@ -1,6 +1,6 @@
 Notas de desenvolvimento
 
-1) Criação do repositório
+1) Criação do repositório (primeiro com o arquivo de Lista)
 2) Renomear arquivos:
     Atividade_Lista__pilha_e_fila (1).pdf -> Atividade_Lista__pilha_e_fila.pdf
     main.c -> MainListaLigadaD.c
@@ -9,3 +9,18 @@ conforme atividade anterior.
 4) Alterado no MainListaLigadaD: main: #include "ListaLigadaD.h" -> #include "ListaLigadaD.c"
 5) Alterado no ListaLigadaD: #include "ListaLigadaD.h" -> #include "../include/ListaLigadaD.h"
 
+6) Importar arquivos de pilha estatica
+7) Renomear arquivos:
+    main.c -> MainPilhaEstatica.c
+    pilhaEstatica.c -> PilhaEstatica.c
+    pilhaEstatica.h -> PilhaEstatica.h
+8) Alterado no MainPilhaEstatica: main: #include "pilhaEstatica.h" -> #include "PilhaEstatica.c"
+9) Alterado no PilhaEstatica: #include "pilhaEstatica.h" -> #include "../include/PilhaEstatica.h"
+
+10) Importa arquivos de fila dinamica
+11) Separado o arquivo fila_dinamica.c em arquivos:
+    de interface (FilaDinamica.h) e de implementação (FilaDinamica.c)
+12) Renomeado o arquivo:
+    usaFilaDinamica.c -> MainFilaDinamica.c
+13) Alterado no MainFilaDinamica: main: #include "filaDinamica.h" -> #include "FilaDinamica.c"
+14) Alterado no PilhaEstatica: #include "FilaDinamica.h" -> #include "../include/FilaDinamica.h"
