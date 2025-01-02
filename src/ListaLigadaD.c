@@ -1,4 +1,7 @@
-#include "listaLigadaD.h"
+// #include "ListaLigadaD.h"
+
+#include "../include/ListaLigadaD.h"
+
 #include <stdio.h>
 #include <stdlib.h>
 

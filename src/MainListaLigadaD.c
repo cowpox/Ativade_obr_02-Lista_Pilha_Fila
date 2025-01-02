@@ -1,4 +1,4 @@
-#include "listaLigadaD.h"
+#include "ListaLigadaD.c"
 #include <stdio.h>
 
 int main() {

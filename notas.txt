@@ -1,0 +1,11 @@
+Notas de desenvolvimento
+
+1) Criação do repositório
+2) Renomear arquivos:
+    Atividade_Lista__pilha_e_fila (1).pdf -> Atividade_Lista__pilha_e_fila.pdf
+    main.c -> MainListaLigadaD.c
+3) Organizar os arquivos em uma estrutura de diretórios clara e consistente,
+conforme atividade anterior.
+4) Alterado no MainListaLigadaD: main: #include "ListaLigadaD.h" -> #include "ListaLigadaD.c"
+5) Alterado no ListaLigadaD: #include "ListaLigadaD.h" -> #include "../include/ListaLigadaD.h"
+
