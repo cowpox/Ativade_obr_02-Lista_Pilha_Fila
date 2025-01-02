@@ -17,10 +17,19 @@ conforme atividade anterior.
 8) Alterado no MainPilhaEstatica: main: #include "pilhaEstatica.h" -> #include "PilhaEstatica.c"
 9) Alterado no PilhaEstatica: #include "pilhaEstatica.h" -> #include "../include/PilhaEstatica.h"
 
-10) Importa arquivos de fila dinamica
+10) Importar arquivos de fila dinamica
 11) Separado o arquivo fila_dinamica.c em arquivos:
     de interface (FilaDinamica.h) e de implementação (FilaDinamica.c)
 12) Renomeado o arquivo:
     usaFilaDinamica.c -> MainFilaDinamica.c
 13) Alterado no MainFilaDinamica: main: #include "filaDinamica.h" -> #include "FilaDinamica.c"
 14) Alterado no PilhaEstatica: #include "FilaDinamica.h" -> #include "../include/FilaDinamica.h"
+
+15) Importar arquivos de deque
+16) Separado o arqvuivo dequeDinamico.c em arquivos:
+    de interface (DequeDinamico.h) e de implementação (DequeDinamico.c)
+17) Renomeado o arquivo:
+    usaDeque.c -> MainDeque.c
+18) Alterado no MainDeque: main: #include "dequeDinamico.h" -> #include "DequeDinamico.c"
+19) Alterado no DequeDinamico: #include "DequeDinamico.h" -> #include "../include/DequeDinamico.h"
+
