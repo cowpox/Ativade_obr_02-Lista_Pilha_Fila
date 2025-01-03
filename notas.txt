@@ -50,4 +50,31 @@ ListaDuplaLigada.c, ListaDuplaLigada.h, MainListaDuplaLigada.c
     inserção no início OK; no meio OK; no final OK
     deleção elemento único OK; primeiro OK, meio OK, final OK, inexistente OK (mensagem de erro)
 
+27) Inicar a atividade de pilha: criar a função solicitada no arquivo de interface:
+        void exibirPilhaInvertida(PILHA* p);
+    e de implementação:
+        void exibirPilhaInvertida(PILHA* p) {
+            printf("Pilha (da base para o topo): \" ");
+            for (int i = 0; i <= p->topo; i++){
+                printf("%i ", p->A[i].chave);
+            }
+            printf("\"\n");
+        }
+28) Ajustes em MainPilhaEstatica:
+    função help(): adicionada opção para pilha invertida:
+        printf("   x : imprimir pilha invertida\n");
+
+    criação da função exibirInvertida():
+        void exibirInvertida(PILHA* p) {
+            exibirPilhaInvertida(p);
+        }
+
+    função main(): adicionada ação para pilha invertida:
+        case 'x':
+            exibirInvertida(&pilha);
+            break;
+29) Teste realizado:
+    exibir pilha e pilha invertida vazias: OK 
+    exibir pilha e pilha invertida com um elemento: OK
+    exibir pilha e pilha invertida com cinco elementos: OK
 
