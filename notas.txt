@@ -33,3 +33,7 @@ conforme atividade anterior.
 18) Alterado no MainDeque: main: #include "dequeDinamico.h" -> #include "DequeDinamico.c"
 19) Alterado no DequeDinamico: #include "DequeDinamico.h" -> #include "../include/DequeDinamico.h"
 
+20) Iniciar a atividade da lista: revisar os conceitos e o código da lista ligada dinâmica
+21) Copiados os arquivos originais da aula de lista ligada dinamica e renomeados:
+ListaDuplaLigada.c, ListaDuplaLigada.h, MainListaDuplaLigada.c
+22) Alterado no ListaDuplaLigada: #include "ListaDuplaLigada.h" -> #include "../include/ListaDuplaLigada.h"

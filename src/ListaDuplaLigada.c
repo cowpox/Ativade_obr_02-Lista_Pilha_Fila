@@ -1,7 +1,6 @@
-#include "../include/ListaLigadaD.h"
-
 #include <stdio.h>
 #include <stdlib.h>
+#include "../include/ListaDuplaLigada.h"
 
 void inicializarLista(LISTA* l) {
   l->inicio = NULL;
@@ -54,7 +53,7 @@ PONT buscaSeqExc(LISTA* l, TIPOCHAVE ch, PONT* ant) {
     *ant = atual;
     atual = atual->prox;
   }
-  if (atual != NULL && atual->reg.chave == ch) return atual;
+  if ((atual != NULL) && (atual->reg.chave == ch)) return atual;
   return NULL;
 }
 
@@ -83,7 +82,7 @@ bool inserirElemListaOrd(LISTA* l, REGISTRO reg) {
   PONT ant, i;
   i = buscaSeqExc(l, ch, &ant);
   if (i != NULL) return false;
-  i = (PONT)malloc(sizeof(ELEMENTO));
+  i = (PONT) malloc(sizeof(ELEMENTO));
   i->reg = reg;
   if (ant == NULL) {
     i->prox = l->inicio;
@@ -95,12 +94,12 @@ bool inserirElemListaOrd(LISTA* l, REGISTRO reg) {
   return true;
 }
 
-PONT retornarPrimeiro(LISTA* l, TIPOCHAVE *ch) {
+PONT retornarPrimeiro(LISTA* l, TIPOCHAVE* ch) {
   if (l->inicio != NULL) *ch = l->inicio->reg.chave;
   return l->inicio;
 }
 
-PONT retornarUltimo(LISTA* l, TIPOCHAVE *ch) {
+PONT retornarUltimo(LISTA* l, TIPOCHAVE* ch) {
   PONT ultimo = l->inicio;
   if (l->inicio == NULL) return NULL;
   while (ultimo->prox != NULL) ultimo = ultimo->prox;

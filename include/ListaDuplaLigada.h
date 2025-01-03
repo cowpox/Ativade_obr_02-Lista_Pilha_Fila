@@ -1,26 +1,27 @@
-#ifndef LISTALIGADAD_H
-#define LISTALIGADAD_H
+#ifndef LISTADUPLALIGADA_H
+#define LISTADUPLALIGADA_H
 
 #include <stdbool.h>
 
 typedef int TIPOCHAVE;
 
 typedef struct {
-    TIPOCHAVE chave;
-    // outros campos...
+  TIPOCHAVE chave;
+  // outros campos...
 } REGISTRO;
 
-typedef struct tempRegistro {
-    REGISTRO reg;
-    struct tempRegistro* prox;
+typedef struct aux {
+  REGISTRO reg;
+  struct aux* prox;
 } ELEMENTO;
 
 typedef ELEMENTO* PONT;
 
 typedef struct {
-    PONT inicio;
+  PONT inicio;
 } LISTA;
 
+// Declaração das funções
 void inicializarLista(LISTA* l);
 void exibirLista(LISTA* l);
 int tamanho(LISTA* l);
@@ -31,7 +32,7 @@ PONT buscaSeqExc(LISTA* l, TIPOCHAVE ch, PONT* ant);
 bool excluirElemLista(LISTA* l, TIPOCHAVE ch);
 void reinicializarLista(LISTA* l);
 bool inserirElemListaOrd(LISTA* l, REGISTRO reg);
-PONT retornarPrimeiro(LISTA* l, TIPOCHAVE *ch);
-PONT retornarUltimo(LISTA* l, TIPOCHAVE *ch);
+PONT retornarPrimeiro(LISTA* l, TIPOCHAVE* ch);
+PONT retornarUltimo(LISTA* l, TIPOCHAVE* ch);
 
-#endif // LISTALIGADAD_H
+#endif // LISTADUPLALIGADA_H
