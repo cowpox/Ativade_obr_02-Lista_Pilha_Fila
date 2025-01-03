@@ -58,13 +58,23 @@ PONT buscaSeqExc(LISTA* l, TIPOCHAVE ch, PONT* ant) {
 }
 
 bool excluirElemLista(LISTA* l, TIPOCHAVE ch) {
-  PONT ant, i;
-  i = buscaSeqExc(l, ch, &ant);
-  if (i == NULL) return false;
-  if (ant == NULL) l->inicio = i->prox;
-  else ant->prox = i->prox;
-  free(i);
-  return true;
+    PONT i = buscaSequencial(l, ch);
+    if (i == NULL) return false; //não existe o registro na lista
+
+    //deleçao do início
+    if (i->ant == NULL && i->prox == NULL){ //único registro
+        l->inicio = NULL;
+    } else if (i->ant == NULL) { //primeiro registro
+        l->inicio = i->prox;
+        i->prox->ant = NULL;
+    } else if (i->prox == NULL){ //ultimo registro
+        i->ant->prox = NULL;
+    } else { //deleção do meio
+        i->ant->prox = i->prox;
+        i->prox->ant = i->ant;
+    }
+    free(i);
+    return true;
 }
 
 void reinicializarLista(LISTA* l) {
@@ -78,20 +88,49 @@ void reinicializarLista(LISTA* l) {
 }
 
 bool inserirElemListaOrd(LISTA* l, REGISTRO reg) {
-  TIPOCHAVE ch = reg.chave;
-  PONT ant, i;
-  i = buscaSeqExc(l, ch, &ant);
-  if (i != NULL) return false;
-  i = (PONT) malloc(sizeof(ELEMENTO));
-  i->reg = reg;
-  if (ant == NULL) {
-    i->prox = l->inicio;
-    l->inicio = i;
-  } else {
-    i->prox = ant->prox;
-    ant->prox = i;
-  }
-  return true;
+    TIPOCHAVE ch = reg.chave;
+
+    // encontra posição de inserção
+    PONT pos = l->inicio;
+    while (pos != NULL && pos->reg.chave < ch) pos = pos->prox;
+
+    // verifica duplicação
+    if (pos != NULL && pos->reg.chave == ch)
+        return false;  // elemento já existe!
+
+    // alocação de memória para o registro
+    PONT i = (PONT)malloc(sizeof(ELEMENTO));
+    i->reg = reg;
+
+    // ajuste dos ponteiros
+
+    if (pos == NULL) { // Inserção no final da lista
+        if (l->inicio == NULL) { // Lista vazia
+            i->prox = NULL;
+            i->ant = NULL;
+            l->inicio = i;
+        } else { // Lista não vazia
+            PONT ultimo = l->inicio;
+            while (ultimo->prox != NULL)
+                ultimo = ultimo->prox;
+            ultimo->prox = i;
+            i->ant = ultimo;
+            i->prox = NULL;
+        }
+    } else if (pos->ant == NULL) { // Inserção no início da lista
+        i->prox = pos;
+        i->ant = NULL;
+        pos->ant = i;
+        l->inicio = i;
+    } else { // Inserção entre dois elementos
+        i->prox = pos;
+        i->ant = pos->ant;
+        pos->ant->prox = i;
+        pos->ant = i;
+    }
+
+    return true;
+
 }
 
 PONT retornarPrimeiro(LISTA* l, TIPOCHAVE* ch) {

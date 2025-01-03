@@ -12,7 +12,7 @@ typedef struct {
 
 typedef struct aux {
   REGISTRO reg;
-  struct aux* prox;
+  struct aux *ant, *prox;
 } ELEMENTO;
 
 typedef ELEMENTO* PONT;

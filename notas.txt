@@ -37,3 +37,17 @@ conforme atividade anterior.
 21) Copiados os arquivos originais da aula de lista ligada dinamica e renomeados:
 ListaDuplaLigada.c, ListaDuplaLigada.h, MainListaDuplaLigada.c
 22) Alterado no ListaDuplaLigada: #include "ListaDuplaLigada.h" -> #include "../include/ListaDuplaLigada.h"
+
+23) Modificação na struct ELEMENTO => campo adicional *ant:
+        typedef struct aux {
+        REGISTRO reg;
+        struct aux *ant, *prox;
+        } ELEMENTO;
+
+24) Função de inserção: considerar os casos de inserção no início, no meio e no final (com lista vazia ou não)
+25) Função de deleção: considerar os casos de deleção de um único elemento, do primeiro, do último e de um elemento do meio
+26) Primeiro teste realizado:
+    inserção no início OK; no meio OK; no final OK
+    deleção elemento único OK; primeiro OK, meio OK, final OK, inexistente OK (mensagem de erro)
+
+
