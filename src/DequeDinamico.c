@@ -28,6 +28,22 @@ void exibirDequeFim(DEQUE* d) {
   printf("\"\n");
 }
 
+bool encontrarMax(DEQUE* d, int* max) {
+    bool resposta = false;
+    PONT end = d->cabeca->prox;
+    // verifica se há elementos no deque
+    if (end != d->cabeca) {
+        *max = end->reg.chave;
+        resposta = true;
+        // percorre o deque procurando o maior elemento
+        while (end != d->cabeca) {
+            if (end->reg.chave > *max) *max = end->reg.chave;
+            end = end->prox;
+        }
+    }
+    return resposta;
+}
+
 int tamanho(DEQUE* d) {
   PONT end = d->cabeca->prox;
   int tam = 0;

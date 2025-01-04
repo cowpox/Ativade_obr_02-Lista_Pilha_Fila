@@ -66,6 +66,15 @@ void exibir2(DEQUE* d){
   exibirDequeFim(d);
 }
 
+void valorMax(DEQUE* d) {
+    int max; // Variável para armazenar o valor máximo
+    if (encontrarMax(d, &max)) // Passa o endereço de max
+        printf("A maior chave do deque é %i\n", max);
+    else
+        printf("O deque está vazio!\n");
+}
+
+
 void meuLog(DEQUE* d){
   printf("Numero de elementos no deque: %i.\n",tamanho(d));
   printf("Tamanho do deque (em bytes): %i.\n",tamanhoEmBytes(d));
@@ -79,6 +88,7 @@ void help(){
   printf("   f : excluir elemento com chave=chave1, na entrada 2\n");
   printf("   o : imprimir deque a partir da entrada 1\n");
   printf("   p : imprimir deque a partir da entrada 2\n");
+  printf("   m : imprimir a maior chave do deque\n");
   printf("   d : destruir (zerar) lista\n");
   printf("   l : exibir log de utilizacao do deque\n");
   printf("   h : exibir esta mensagem de ajuda\n");
@@ -106,6 +116,7 @@ int main(){
       case 'f' : excluir2(&deque); break;
       case 'o' : exibir1(&deque); break;
       case 'p' : exibir2(&deque); break;
+      case 'm' : valorMax(&deque); break;
       case 'd' : destruir(&deque); break;
       case 'l' : meuLog(&deque); break;
       case 'h' : help(); break;

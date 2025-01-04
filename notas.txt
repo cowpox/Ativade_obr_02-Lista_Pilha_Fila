@@ -78,3 +78,44 @@ ListaDuplaLigada.c, ListaDuplaLigada.h, MainListaDuplaLigada.c
     exibir pilha e pilha invertida com um elemento: OK
     exibir pilha e pilha invertida com cinco elementos: OK
 
+30) Iniciar atividade de deque: criar a função solicitada no arquivo de interface:
+        bool encontrarMax(DEQUE* d, int* max);
+    e de implementação:
+        bool encontrarMax(DEQUE* d, int* max) {
+            bool resposta = false;
+            PONT end = d->cabeca->prox;
+            // verifica se há elementos no deque
+            if (end != d->cabeca) {
+                *max = end->reg.chave;
+                resposta = true;
+                // percorre o deque procurando o maior elemento
+                while (end != d->cabeca) {
+                    if (end->reg.chave > *max) *max = end->reg.chave;
+                    end = end->prox;
+                }
+            }
+            return resposta;
+        }
+31) Ajuste em MainDeque:
+    função help(): adicionada opção para valor máximo:
+        printf("   m : imprimir a maior chave do deque\n");
+
+    criação da função valorMax:
+        void valorMax(DEQUE* d) {
+            int max; // Variável para armazenar o valor máximo
+            if (encontrarMax(d, &max)) // Passa o endereço de max
+                printf("A maior chave do deque é %i\n", max);
+            else
+                printf("O deque está vazio!\n");
+        }
+
+    função main(): adicionada ação valor máximo do deque:
+        case 'm' : valorMax(&deque); break;
+32) Teste realizado:
+    Com o deque vazio: OK
+    Com um elemento: OK
+    Com dois elementos em ordem crescente: OK
+    Com dois elementos em ordem decrescente: OK
+    Com cinco elementos: OK
+
+33) 

@@ -26,6 +26,7 @@ typedef struct {
 void inicializarDeque(DEQUE* d);
 void exibirDequeInicio(DEQUE* d);
 void exibirDequeFim(DEQUE* d);
+bool encontrarMax(DEQUE* d, int* max);
 int tamanho(DEQUE* d);
 int tamanho2(DEQUE* d);
 int tamanhoEmBytes(DEQUE* d);
