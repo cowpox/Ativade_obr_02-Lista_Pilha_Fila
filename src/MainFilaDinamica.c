@@ -20,12 +20,6 @@ void buscar(FILA* f){
   PONT posicao = buscaSeq(f,ch);
   if (posicao != NULL) printf("Elemento %i encontrado no endereco %p (busca sequencial).\n",ch,posicao);
   else printf("Nao foi possivel encontrar elemento %i.\n",ch);
-  posicao = buscaSeqSent1(f,ch);
-  if (posicao != NULL) printf("Elemento %i encontrado no endereco %p (busca sequencial sentinela 1).\n",ch,posicao);
-  else printf("Nao foi possivel encontrar elemento %i.\n",ch);
-  posicao = buscaSeqSent2(f,ch);
-  if (posicao != NULL) printf("Elemento %i encontrado no endereco %p (busca sequencial sentinela 2).\n",ch,posicao);
-  else printf("Nao foi possivel encontrar elemento %i.\n",ch);
 }
 
 void exibirPrimeiro(FILA* f){
@@ -46,7 +40,7 @@ void excluir(FILA* f){
   TIPOCHAVE ch;
   REGISTRO excluido;
   if (excluirDaFila(f,&excluido)) printf("Elemento %i excluido corretamente.\n",excluido.chave);
-  else printf("Nao foi possivel excluir elemento (fila vazio).\n");
+  else printf("Nao foi possivel excluir elemento (fila vazia).\n");
 }
 
 void exibir(FILA* f){
@@ -63,7 +57,8 @@ void help(){
   printf("   i <chave1>: inserir elemento com chave=chave1 no final da fila\n");
   printf("   e : exclui primeiro elemento da fila\n");
   printf("   p : imprimir fila\n");
-  printf("   d : destruir (zerar) fila\n");
+  printf("   r : reinicializar (zerar) fila\n");
+  printf("   d : destruir (desalocar) fila\n");
   printf("   l : exibir log de utilizacao da fila\n");
   printf("   h : exibir esta mensagem de ajuda\n");
   printf("   b <chave1>: exibir posicao do elemento com chave=chave1\n");
@@ -72,9 +67,14 @@ void help(){
   printf("   q : sair (quit)\n");
 }
 
+void reinicializar(FILA* f){
+     reinicializarFila(f);
+     printf("Fila zerada.\n");
+}
+
 void destruir(FILA* f){
      destruirFila(f);
-     printf("Fila zerada.\n");
+     printf("Fila desalocada.\n");
 }
 
 int main(){
@@ -88,6 +88,7 @@ int main(){
       case 'i' : inserir(&fila); break;
       case 'e' : excluir(&fila); break;
       case 'p' : exibir(&fila); break;
+      case 'r' : reinicializar(&fila); break;
       case 'd' : destruir(&fila); break;
       case 'l' : meuLog(&fila); break;
       case 'h' : help(); break;
