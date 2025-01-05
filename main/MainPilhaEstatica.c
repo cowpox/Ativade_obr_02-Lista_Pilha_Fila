@@ -1,4 +1,6 @@
-#include "PilhaEstatica.c"
+
+#include "../include/PilhaEstatica.h"
+// #include "../src/PilhaEstatica.c"
 #include <stdio.h>
 
 void inserir(PILHA* p) {

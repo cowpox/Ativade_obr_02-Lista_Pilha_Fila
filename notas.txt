@@ -126,12 +126,14 @@ ListaDuplaLigada.c, ListaDuplaLigada.h, MainListaDuplaLigada.c
         } FILA;
 
 35) Alteração das funções para considerar o nó cabeça:
+    ajuste na inicialização:
         void inicializarFila(FILA* f) {
             f->cabeca = (PONT)malloc(sizeof(ELEMENTO));
             f->cabeca->prox = NULL;
             f->fim = NULL;
         }
 
+    ajuste no tamanho da fila:
         int tamanho(FILA* f) {
         PONT end = f->cabeca->prox;
         int tam = 0;
@@ -251,36 +253,35 @@ ListaDuplaLigada.c, ListaDuplaLigada.h, MainListaDuplaLigada.c
 
     remover a função buscaSeqSent1 e buscaSeqSent2 (na implementação e na interface)
 
-alteracao no main
-help()
-printf("   r : reinicializar (zerar) fila\n");
-printf("   d : destruir (desalocar) fila\n");
+36) Alteracões no MainFilaDinamica.c
+    help()
+        printf("   r : reinicializar (zerar) fila\n");
+        printf("   d : destruir (desalocar) fila\n");
 
-void reinicializar(FILA* f){
-     reiniciarFila(f);
-     printf("Fila zerada.\n");
-}
+    void reinicializar(FILA* f){
+        reiniciarFila(f);
+        printf("Fila zerada.\n");
+    }
 
-void destruir(FILA* f){
-     destruirFila(f);
-     printf("Fila desalocada.\n");
-}
+    void destruir(FILA* f){
+        destruirFila(f);
+        printf("Fila desalocada.\n");
+    }
 
-remocao da buscaSeqSent1 e buscaSeqSent2
-void buscar(FILA* f){
-  TIPOCHAVE ch;
-  scanf("%i",&ch);
-  PONT posicao = buscaSeq(f,ch);
-  if (posicao != NULL) printf("Elemento %i encontrado no endereco %p (busca sequencial).\n",ch,posicao);
-  else printf("Nao foi possivel encontrar elemento %i.\n",ch);
-}
+    remocao da buscaSeqSent1 e buscaSeqSent2
 
-main()
-    case 'r' : reinicializar(&fila); break;
+    void buscar(FILA* f){
+        TIPOCHAVE ch;
+        scanf("%i",&ch);
+        PONT posicao = buscaSeq(f,ch);
+        if (posicao != NULL) printf("Elemento %i encontrado no endereco %p (busca sequencial).\n",ch,posicao);
+        else printf("Nao foi possivel encontrar elemento %i.\n",ch);
+    }
 
+    main()
+        case 'r' : reinicializar(&fila); break;
 
-
-XX) Teste realizado:
+37) Teste realizado:
     Com a fila vazia: OK
     Com um elemento: OK
     Com dois elementos: OK

@@ -2,7 +2,9 @@
 //     MainListaDuplaLigada.c
 // Este programa interage com o usuario para o gerenciamento de uma lista.
 ******************************************************************************/
-#include "ListaDuplaLigada.c"
+
+#include "../include/ListaDuplaLigada.h"
+// #include "../src/ListaDuplaLigada.c"
 #include <stdio.h>
 
 void inserir(LISTA *l){

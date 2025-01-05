@@ -2,7 +2,9 @@
 //     usaDeque.c
 // Este programa interage com o usuario para o gerenciamento de um deque.
 ******************************************************************************/
-#include "DequeDinamico.c"
+
+#include "../include/DequeDinamico.h"
+// #include "../src/DequeDinamico.c"
 #include <stdio.h>
 
 void inserir1(DEQUE* d){

@@ -2,7 +2,9 @@
 //     MainFilaDinamica.c
 // Este programa interage com o usuario para o gerenciamento de uma fila.
 ******************************************************************************/
-#include "FilaDinamica.c"
+
+#include "../include/FilaDinamica.h"
+// #include "../src/FilaDinamica.c"
 #include <stdio.h>
 
 void inserir(FILA* f){
