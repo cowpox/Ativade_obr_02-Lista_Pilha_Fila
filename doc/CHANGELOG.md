@@ -46,11 +46,19 @@
   * Deque com um elemento.
   * Deque com elementos em diferentes ordens (crescente, decrescente, aleatória).
 
+
 ## Melhorias Finais
 
-* Organização dos arquivos em diretórios:
-  * `include/` para cabeçalhos.
-  * `src/` para implementações.
-  * `main/` para arquivos de teste.
-* Adição de um `Makefile` para facilitar a compilação e limpeza de arquivos.
-* Documentação e ajustes finais nos comandos `help` em cada arquivo principal.
+- Organização dos arquivos em diretórios:
+  - `include/` para cabeçalhos.
+  - `src/` para implementações.
+  - `main/` para arquivos de teste.
+  - `build/` para binários gerados.
+  - `doc/` para documentação.
+- Adição de um `Makefile` para facilitar a compilação e limpeza de arquivos.
+- Criação de arquivos de documentação:
+  - `README.md` para visão geral do projeto.
+  - `MANUAL.md` para instruções de uso.
+  - `NOTAS_DE_DESENVOLVIMENTO.md` para detalhes do progresso.
+  - `TESTS.md` para documentação dos testes realizados.
+- Ajustes finais nos comandos `help` em cada arquivo principal.

@@ -7,7 +7,7 @@ CFLAGS = -Wall -g
 INCLUDE_DIR = include
 SRC_DIR = src
 MAIN_DIR = main
-BIN_DIR = bin
+BIN_DIR = build
 
 # Arquivos principais
 MAIN_LISTA = $(MAIN_DIR)/MainListaDuplaLigada.c
@@ -36,11 +36,10 @@ $(BIN_FILA): $(MAIN_FILA) $(SRC_DIR)/FilaDinamica.c $(INCLUDE_DIR)/FilaDinamica.
 $(BIN_DEQUE): $(MAIN_DEQUE) $(SRC_DIR)/DequeDinamico.c $(INCLUDE_DIR)/DequeDinamico.h
 	$(CC) $(CFLAGS) -o $@ $(MAIN_DEQUE) $(SRC_DIR)/DequeDinamico.c
 
-# Criar diretório bin se não existir
+# Criar diretório build se não existir
 directories:
 	if not exist $(BIN_DIR) mkdir $(BIN_DIR)
 
 # Limpar arquivos binários
 clean:
 	if exist $(BIN_DIR) del /q $(BIN_DIR)\*
-

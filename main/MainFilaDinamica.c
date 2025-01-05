@@ -39,7 +39,7 @@ void exibirUltimo(FILA* f){
 }
 
 void excluir(FILA* f){
-  TIPOCHAVE ch;
+//   TIPOCHAVE ch;
   REGISTRO excluido;
   if (excluirDaFila(f,&excluido)) printf("Elemento %i excluido corretamente.\n",excluido.chave);
   else printf("Nao foi possivel excluir elemento (fila vazia).\n");

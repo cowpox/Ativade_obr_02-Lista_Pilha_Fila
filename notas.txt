@@ -288,3 +288,9 @@ ListaDuplaLigada.c, ListaDuplaLigada.h, MainListaDuplaLigada.c
     Com cinco elementos: OK
     Inserção: OK
     Remoção: OK
+
+39) Criação do Makefile
+
+40) Criação da Documentacão
+
+41) Organização da estrutura de arquivos
