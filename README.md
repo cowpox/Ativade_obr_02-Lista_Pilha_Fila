@@ -1,4 +1,3 @@
-
 # Projeto: Estruturas de Dados em C
 
 Este repositório contém implementações e testes de quatro tipos de estruturas de dados em C: lista duplamente ligada, pilha estática, fila dinâmica com nó-cabeça e deque dinâmico. O objetivo é aplicar conceitos de estruturas de dados para criar implementações robustas e bem testadas.
@@ -9,7 +8,7 @@ O repositório está organizado da seguinte forma:
 
 ```
 /
-|-- build/             # Binários gerados após a compilação
+|-- build/             # Binários gerados após a compilação (somente local)
 |-- doc/               # Documentação do projeto
 |   |-- Atividade_Lista__pilha_e_fila.pdf  # Descrição da atividade
 |   |-- CHANGELOG.md   # Registro de alterações
